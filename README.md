@@ -1,12 +1,9 @@
-파일 리스트
-
 1. docker-compose.yml
  elastic search - master node
  elastic search - data node
  kibana 
 
 2. log 를 쌓기 위한 nginx webserver 구동
- 
  2-1. nginx.conf
     : log_format 을 설정하여, 필요한 정보를 access log 에 쌓음
  
@@ -39,3 +36,7 @@
     : customizing 한 logstash2.conf 파일로 docker image 를 생성
     : build command : docker build -t logstash-redis -f Dockerfile_logstash2 .
     : run command : docker run --name logstash-redis --net=yeoreumab_shin_esnet --link redis-elk:redis-elk --link elasticsearch:elaasticsearch -d logstash-redis
+
+Todo : docker-compose.yml 안에 nginx, logstash, redis, logstash2 동시 구동
+       쉘 스크립트 작성
+       redis ip 컨테이너 내 공유 방법 찾기
