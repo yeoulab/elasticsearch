@@ -1,4 +1,4 @@
-* 파일 리스트
+파일 리스트
 
 1. docker-compose.yml
  elastic search - master node
